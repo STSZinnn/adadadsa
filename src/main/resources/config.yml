@@ -1,0 +1,203 @@
+# Sovereign SMP 1.7.5 — Seven legendary artifacts; special weapon: Sovereign Mace
+# Auto-created as plugins/SovereignSMP/config.yml
+# Cooldowns are per-user and in seconds; all distances are in Minecraft blocks.
+# Damage is Minecraft health points (2 = 1 heart), before armor reductions.
+
+mace:
+  passive:
+    slowness-ticks: 45  # Every third successful mace hit, Slowness II + downward tug
+  event-horizon:
+    cooldown-seconds: 18
+    # Event Horizon combines a near-field pull with a traveling purple beam.
+    nearby-radius-blocks: 5.0
+    radius-blocks: 13.0
+    target-range-blocks: 28.0
+    pull-velocity: 0.9
+    max-pull-speed: 1.4
+    beam-width-blocks: 2.8
+    pulse-speed: 2.8
+    particles-per-ring: 36
+    pull-duration-ticks: 30
+    slowness-ticks: 45
+    impact-damage-health-points: 2.0
+  cosmetics:
+    aura-enabled: true
+    aura-particles: 5
+  collapse:
+    cooldown-seconds: 25
+    radius-blocks: 9.0
+    damage-health-points: 5.0
+    knockback: 1.2
+  singularity:
+    cooldown-seconds: 40
+    target-range-blocks: 20.0
+    radius-blocks: 6.5
+    burst-push-velocity: 2.1
+    orbit-block-count: 12
+    block-sample-radius: 5.0
+    duration-ticks: 80
+    burst-damage-health-points: 6.0
+    pulse-damage-health-points: 1.0
+
+# All eight authentic Sovereign items (7 artifacts + Mace) ALWAYS use their tooltip style.
+# Players see the custom backgrounds when the combined resource pack is installed.
+# Without the pack, RGB-gradient item names and lore are still present.
+
+# Artifact I / VII: Echo Scythe of the Deep (unbreakable netherite sword)
+# NOTE: True Invisibility hides the whole player entity from other clients,
+# including held items, armor, and name tag. It silences entity sounds but
+# other actions (breaking blocks, projectiles, plugin particles) can still be heard/seen.
+echo:
+  passive:
+    sense-radius-blocks: 18.0
+    speed-bonus-percent: 10
+    warden-immunity: true
+    aura-enabled: true
+    footprints-enabled: true
+    footprint-duration-ticks: 40
+  pulse:
+    cooldown-seconds: 22
+    radius-blocks: 18.0
+    glowing-seconds: 6
+  silence:
+    cooldown-seconds: 45
+    duration-seconds: 7
+    enemy-radius-blocks: 9.0
+  wrath:
+    cooldown-seconds: 55
+    range-blocks: 22.0
+    damage-health-points: 5.0
+
+# HUD works entirely through colored Minecraft text. No texture pack required.
+hud:
+  enabled: true
+  update-ticks: 10
+  show-sculk-awareness: true
+
+# Minecraft-style 16x16 custom effect sprites rendered as temporary ItemDisplays.
+# OPTIONAL: Enable Sovereign SMP Particle Pack in Minecraft BEFORE turning this on.
+# OFF by default. Existing vanilla particle effects still run while OFF.
+visuals:
+  custom-sprites-enabled: false
+  max-live-sprites: 90
+  sprite-lifetime-ticks: 12
+  ambient-sprites-per-pulse: 1
+  ability-sprites-enabled: true
+
+# Combat rule for all current and future Sovereign special attacks.
+combat:
+  abilities-ignore-armor: true
+
+# Artifact II / VII: Witherborn (Netherite Axe)
+wither:
+  passive:
+    wither-ticks: 60
+  barrage:
+    cooldown-seconds: 22
+    damage-health-points: 3.0
+    radius-blocks: 2.3
+  devour:
+    cooldown-seconds: 32
+    damage-health-points: 3.0
+    radius-blocks: 8.0
+  ascension:
+    cooldown-seconds: 60
+    final-damage-health-points: 4.0
+
+# Artifact III / VII: Tidelord (Trident)
+tide:
+  passive:
+    reflect-chance-percent: 18
+    reflect-damage-health-points: 2.0
+  beam:
+    cooldown-seconds: 24
+    range-blocks: 22.0
+    duration-ticks: 40
+    damage-per-hit-health-points: 1.5
+  spikes:
+    cooldown-seconds: 30
+    range-blocks: 10.0
+    damage-health-points: 4.0
+  judgment:
+    cooldown-seconds: 60
+    damage-per-strike-health-points: 3.0
+
+# Artifact IV / VII: Dragonfang (Ender Dragon crossbow)
+# Normal right click loads/fires vanilla arrows; empowered shots launch actual Dragon Fireballs.
+# Requires arrows. Power III is handled explicitly when fired because vanilla crossbows ignore it.
+dragon:
+  passive:
+    mark-burst-damage-health-points: 1.0
+  breath:
+    cooldown-seconds: 18
+    radius-blocks: 2.7
+    cloud-duration-ticks: 60
+    damage-per-pulse-health-points: 1.0
+  shift:
+    cooldown-seconds: 28
+    range-blocks: 8.0
+  wrath:
+    cooldown-seconds: 60
+    strike-damage-health-points: 4.0
+
+# Artifact V / VII: Paleheart — The Creaking Sickle (Pale Garden)
+# You become faster while wielding it near an opponent who is looking away.
+# The Haunted Grove can be countered by looking directly at its Creaking figures.
+paleheart:
+  passive:
+    radius-blocks: 12
+    melee-bonus-health-points: 2.0
+  roots:
+    cooldown-seconds: 22
+    range-blocks: 13.0
+    damage-health-points: 3.0
+    slow-ticks: 28
+  step:
+    cooldown-seconds: 30
+    range-blocks: 7.0
+    decoy-duration-ticks: 80
+  grove:
+    cooldown-seconds: 65
+    radius-blocks: 15.0
+    duration-ticks: 140
+    touch-damage-health-points: 2.0
+    pulse-damage-health-points: 2.0
+
+# Artifact VI / VII: Stormvault — The Breeze Glaive (Copper Spear)
+stormvault:
+  passive:
+    stack-duration-seconds: 8
+  gale:
+    cooldown-seconds: 18
+    range-blocks: 12.0
+    damage-health-points: 3.0
+    charged-bonus-health-points: 1.0
+  updraft:
+    cooldown-seconds: 28
+  tempest:
+    cooldown-seconds: 60
+    duration-ticks: 120
+    max-travel-blocks: 10.0
+    pull-radius-blocks: 4.0
+    pulse-damage-health-points: 1.0
+    final-damage-health-points: 3.0
+    charged-bonus-health-points: 1.0
+
+# Artifact VII / VII: Hexcaller — The Evoker Staff (Blaze Rod)
+hexcaller:
+  passive:
+    mark-duration-seconds: 8
+  fangs:
+    cooldown-seconds: 20
+    range-blocks: 12
+    damage-health-points: 3.0
+    hexbound-ring-damage-health-points: 2.0
+  vexbound:
+    cooldown-seconds: 35
+    max-damage-health-points: 2.0
+  dominion:
+    cooldown-seconds: 65
+    radius-blocks: 10.0
+    wave-damage-health-points: 2.0
+    final-bonus-health-points: 3.0
+    hexbound-bonus-health-points: 1.0
